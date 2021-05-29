@@ -1,0 +1,4 @@
+.mySwipper.swiper-container-rtl .swiper-button-prev,
+.mySwipper.swiper-container-rtl .swiper-button-next {
+  fill: #fff;
+}
