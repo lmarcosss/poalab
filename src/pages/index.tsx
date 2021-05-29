@@ -7,8 +7,6 @@ export default function Home() {
     <Box>
       <Header />
       <Banner />
-
-      Teste
     </Box>
   );
 }
