@@ -1,12 +1,13 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import { theme } from "../styles/themes";
-import { SidebarDrawerProvider } from "../contexts/SidebarDrawerContext";
-
+import { ChakraProvider } from '@chakra-ui/react';
+import { theme } from '../styles/themes';
+import { SidebarDrawerProvider } from '../contexts/SidebarDrawerContext';
+import { Header } from '../components/Header';
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider resetCSS theme={theme}>
+    <ChakraProvider theme={theme}>
       <SidebarDrawerProvider>
-        <Component {...pageProps} />{" "}
+        <Header />
+        <Component {...pageProps} />
       </SidebarDrawerProvider>
     </ChakraProvider>
   );

@@ -1,8 +1,8 @@
-import { Flex, useBreakpointValue, IconButton, Icon } from "@chakra-ui/react";
-import { Logo } from "./Logo";
-import { RiMenuLine } from "react-icons/ri";
-import { useSidebarDrawer } from "../../contexts/SidebarDrawerContext";
-import { NavBar } from "./NavBar";
+import { Flex, useBreakpointValue, IconButton, Icon } from '@chakra-ui/react';
+import { Logo } from './Logo';
+import { RiMenuLine } from 'react-icons/ri';
+import { useSidebarDrawer } from '../../contexts/SidebarDrawerContext';
+import { NavBar } from './NavBar';
 
 export function Header() {
   const { onOpen } = useSidebarDrawer();
@@ -15,14 +15,14 @@ export function Header() {
     <Flex
       as="header"
       w="100%"
-      h={["16", "20"]}
-      maxWidth={1480}
-      mx="auto"
+      h={['16', '20']}
+      position="fixed"
+      top="0"
+      background="#fff"
       align="center"
-      justify="center"
+      boxShadow="0 3px 5px rgba(57, 63, 72, 0.3)"
       px="6"
     >
-      <NavBar />
       {!isWideVersion && (
         <IconButton
           aria-label="Open navigation"
@@ -32,7 +32,8 @@ export function Header() {
           onClick={onOpen}
         />
       )}
-      <Logo />
+      <Logo containerProps={{ ml: [0, 0, 0, '40'], flex: 1 }} />
+      <NavBar />
     </Flex>
   );
 }

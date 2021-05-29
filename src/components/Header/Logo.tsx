@@ -1,4 +1,4 @@
-import { Flex, FlexProps, Text } from "@chakra-ui/react";
+import { calc, Flex, FlexProps, Text } from '@chakra-ui/react';
 
 interface Logo {
   lightTheme?: boolean;
@@ -7,19 +7,14 @@ interface Logo {
 
 export function Logo({ lightTheme = false, containerProps }: Logo) {
   return (
-    <Flex
-      flex="1"
-      justify={["center", "center", "flex-start"]}
-      align="center"
-      {...containerProps}
-    >
+    <Flex as="a" href="#" justify="center" {...containerProps}>
       <Text
-        fontSize={["28", "32", "36"]}
+        fontSize={['28', '32', '36']}
         fontWeight="bold"
         display="flex"
         flexDirection="row"
         alignItems="center"
-        color={lightTheme ? "white" : "gray.800"}
+        color={lightTheme ? 'white' : 'gray.800'}
       >
         poa
         <Text color="green.500">LAB</Text>
