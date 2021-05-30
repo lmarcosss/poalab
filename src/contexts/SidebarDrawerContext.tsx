@@ -1,7 +1,7 @@
-import { useDisclosure, UseDisclosureReturn } from "@chakra-ui/react";
-import { useRouter } from "next/dist/client/router";
-import { useEffect } from "react";
-import { createContext, ReactNode, useContext } from "react";
+import { useDisclosure, UseDisclosureReturn } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { createContext, ReactNode, useContext } from 'react';
 
 const SidebarDrawerContext = createContext({} as IContextData);
 
@@ -20,9 +20,7 @@ export function SidebarDrawerProvider({ children }: IProps) {
   }, [router.asPath]);
 
   return (
-    <SidebarDrawerContext.Provider value={disclosure}>
-      {children}
-    </SidebarDrawerContext.Provider>
+    <SidebarDrawerContext.Provider value={disclosure}>{children}</SidebarDrawerContext.Provider>
   );
 }
 
