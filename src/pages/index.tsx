@@ -1,23 +1,66 @@
 import { Box, Text } from '@chakra-ui/react';
-import { Banner } from '../components/Banner';
+import { Swiper } from '../components/Swiper';
+import { Header } from '../components/Header';
 
 export default function Home() {
   return (
     <Box>
-      <Banner />
-      <Text h="1024" display="flex" alignItems="center" justifyContent="center" id="what-is">
-        O que é?
+      <Header />
+      <Swiper />
+
+      <Text
+        fontWeight="medium"
+        h="1024"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        id="about"
+        name="about"
+      >
+        Sobre
       </Text>
-      <Text h="1024" display="flex" alignItems="center" justifyContent="center" id="work-space">
+      <Text
+        fontWeight="medium"
+        h="1024"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        id="work-space"
+        name="work-space"
+      >
         Espaço
       </Text>
-      <Text h="1024" display="flex" alignItems="center" justifyContent="center" id="equipments">
+      <Text
+        fontWeight="medium"
+        h="1024"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        id="equipments"
+        name="equipments"
+      >
         Equipamentos
       </Text>
-      <Text h="1024" display="flex" alignItems="center" justifyContent="center" id="links">
+      <Text
+        fontWeight="medium"
+        h="1024"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        id="links"
+        name="links"
+      >
         Links úteis
       </Text>
-      <Text h="1024" display="flex" alignItems="center" justifyContent="center" id="contact">
+      <Text
+        fontWeight="medium"
+        h="1024"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        id="contact"
+        name="contact"
+      >
         Contato
       </Text>
     </Box>

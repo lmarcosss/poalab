@@ -9,6 +9,8 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,400&display=swap"
             rel="stylesheet"
           />
+          <title>poaLAB</title>
+          <link rel="shortcut icon" href="IMAGES/logo.svg" type="image/svg" />
         </Head>
 
         <body>
