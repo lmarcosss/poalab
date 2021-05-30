@@ -18,10 +18,10 @@ export function Header() {
       h={['16', '20']}
       position="fixed"
       top="0"
-      background="#fff"
-      align="center"
-      boxShadow="0 3px 5px rgba(57, 63, 72, 0.3)"
+      zIndex="99"
+      background="gray.700"
       px="6"
+      align="center"
     >
       {!isWideVersion && (
         <IconButton
@@ -29,11 +29,15 @@ export function Header() {
           icon={<Icon as={RiMenuLine} />}
           fontSize="24"
           variant="unstyled"
+          color="white"
           onClick={onOpen}
         />
       )}
-      <Logo containerProps={{ ml: [0, 0, 0, '40'], flex: 1 }} />
-      <NavBar />
+
+      <Flex w="100%" justify="center" align="center">
+        <Logo />
+        <NavBar />
+      </Flex>
     </Flex>
   );
 }

@@ -13,12 +13,13 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useSidebarDrawer } from '../../contexts/SidebarDrawerContext';
-import { Logo } from './Logo';
+import { useRouter } from 'next/router';
+import { MouseEvent } from 'react';
 
 const ITEMS = [
   {
-    title: 'O que é?',
-    anchor: '#what-is',
+    title: 'Sobre',
+    anchor: '#about',
   },
   {
     title: 'Espaço',
@@ -40,11 +41,16 @@ const ITEMS = [
 
 export function NavBar() {
   const { isOpen, onClose } = useSidebarDrawer();
-
+  const router = useRouter();
   const isDrawerSidebar = useBreakpointValue({
     base: true,
     lg: false,
   });
+
+  function onClick(e: MouseEvent<HTMLElement>, anchor: string) {
+    onClose();
+    setTimeout(() => router.push(anchor), 200);
+  }
 
   if (isDrawerSidebar) {
     return (
@@ -53,10 +59,19 @@ export function NavBar() {
           <DrawerContent bg="gray.800" p="4">
             <DrawerCloseButton mt="6" />
             <DrawerHeader>
-              {/* <Logo lightTheme containerProps={{ justify: 'flex-start' }} /> */}
-              <Text color="white">Navegação</Text>
+              <Text color="green.500">Navegação</Text>
             </DrawerHeader>
-            <DrawerBody></DrawerBody>
+            <DrawerBody>
+              <Stack display="flex" spacing="8">
+                {ITEMS.map((item, index) => {
+                  return (
+                    <Link key={index} onClick={(e) => onClick(e, item.anchor)} color="white">
+                      {item.title}
+                    </Link>
+                  );
+                })}
+              </Stack>
+            </DrawerBody>
             <DrawerFooter justifyContent="center">
               <Image w="24" src="/images/ifrs-dark-theme.svg" />
             </DrawerFooter>
@@ -67,9 +82,9 @@ export function NavBar() {
   }
 
   return (
-    <Stack flex="4" display="flex" direction="row" spacing="8">
+    <Stack pl="8" display="flex" direction="row" spacing="8">
       {ITEMS.map((item, index) => (
-        <Link key={index} href={item.anchor}>
+        <Link href={item.anchor} key={index} color="white">
           {item.title}
         </Link>
       ))}
