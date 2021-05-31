@@ -16,14 +16,14 @@ export function Swiper() {
     <Box zIndex="1" flex="1" w="100%">
       <SwiperReact
         slidesPerView={1}
-        centeredSlides={true}
-        navigation={true}
-        loop={true}
+        centeredSlides
+        navigation
+        loop
+        pagination
         autoplay={{
           delay: 6000,
           disableOnInteraction: false,
         }}
-        pagination={true}
       >
         <SwiperSlide>
           <Banner
