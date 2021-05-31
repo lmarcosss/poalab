@@ -17,6 +17,7 @@ export function Swiper() {
       <SwiperReact
         slidesPerView={1}
         centeredSlides={true}
+        navigation={true}
         loop={true}
         autoplay={{
           delay: 6000,
