@@ -10,9 +10,10 @@ export const theme = extendTheme({
     global: {
       html: {
         scrollBehavior: 'smooth',
-        overflowY: 'scroll',
+        overflowY: 'auto',
       },
       body: {
+        width: '100%',
         bg: 'white',
         color: 'gray.600',
       },
