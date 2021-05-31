@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <title>poaLAB</title>
-          <link rel="shortcut icon" href="IMAGES/logo.svg" type="image/svg" />
+          <link rel="shortcut icon" href="favicon.ico" type="image/icon" />
         </Head>
 
         <body>

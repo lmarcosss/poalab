@@ -8,7 +8,7 @@ export const theme = extendTheme({
   styles: {
     global: {
       html: {
-        'scroll-behavior': 'smooth',
+        scrollBehavior: 'smooth',
       },
       body: {
         bg: 'white',
