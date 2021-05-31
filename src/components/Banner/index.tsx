@@ -15,15 +15,15 @@ export function Banner({ title, subtitle, heading }: Props) {
       backgroundSize="cover"
       align="center"
     >
-      <Flex direction="column" mx="auto">
-        <Text textAlign="center" fontSize={['30', '36']} fontWeight="700" color="white">
+      <Flex direction="column" mx="auto" align="center">
+        <Text fontSize={['22', '24', '36']} fontWeight="700" color="white">
           {title}
-          <Text fontWeight="500" fontSize={['18', '26']}>
-            {subtitle}
-          </Text>
-          <Text px="6" fontSize={['12', '16']} fontWeight="400">
-            {heading}
-          </Text>
+        </Text>
+        <Text fontWeight="500" fontSize={['16', '22', '26']} color="white">
+          {subtitle}
+        </Text>
+        <Text align="center" px="12" fontSize={['12', '14', '16']} fontWeight="400" color="white">
+          {heading}
         </Text>
       </Flex>
     </Flex>
