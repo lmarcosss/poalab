@@ -14,9 +14,8 @@ import {
 } from '@chakra-ui/react';
 import { useSidebarDrawer } from '../../contexts/SidebarDrawerContext';
 import { useRouter } from 'next/router';
-import { MouseEvent } from 'react';
 
-const ITEMS = [
+const MENU_ITEMS = [
   {
     title: 'Sobre',
     anchor: '#about',
@@ -47,7 +46,7 @@ export function NavBar() {
     lg: false,
   });
 
-  function onClick(e: MouseEvent<HTMLElement>, anchor: string) {
+  function onClick(anchor: string) {
     onClose();
     setTimeout(() => router.push(anchor), 200);
   }
@@ -63,9 +62,9 @@ export function NavBar() {
             </DrawerHeader>
             <DrawerBody>
               <Stack display="flex" spacing="8">
-                {ITEMS.map((item, index) => {
+                {MENU_ITEMS.map((item, index) => {
                   return (
-                    <Link key={index} onClick={(e) => onClick(e, item.anchor)} color="white">
+                    <Link key={index} onClick={() => onClick(item.anchor)} color="white">
                       {item.title}
                     </Link>
                   );
@@ -83,7 +82,7 @@ export function NavBar() {
 
   return (
     <Stack pl="8" display="flex" direction="row" spacing="8">
-      {ITEMS.map((item, index) => (
+      {MENU_ITEMS.map((item, index) => (
         <Link href={item.anchor} key={index} color="white">
           {item.title}
         </Link>

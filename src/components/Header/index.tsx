@@ -3,13 +3,27 @@ import { Logo } from './Logo';
 import { RiMenuLine } from 'react-icons/ri';
 import { useSidebarDrawer } from '../../contexts/SidebarDrawerContext';
 import { NavBar } from './NavBar';
+import { useState } from 'react';
+import { useWindowEvent } from '../../hooks/useWindowEvent';
 
 export function Header() {
+  const [prevScroll, setPrevScroll] = useState(0);
+  const [isVisible, setVisible] = useState(true);
   const { onOpen } = useSidebarDrawer();
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
   });
+
+  function handleScroll() {
+    const currentScroll = window.pageYOffset;
+    const visible = prevScroll > currentScroll;
+
+    setPrevScroll(currentScroll);
+    setVisible(visible);
+  }
+
+  useWindowEvent('scroll', handleScroll);
 
   return (
     <Flex
@@ -17,7 +31,8 @@ export function Header() {
       w="100%"
       h={['16', '20']}
       position="fixed"
-      top="0"
+      transition="top 0.7s"
+      top={isVisible ? '0' : '-80px'}
       zIndex="99"
       background="gray.700"
       px="6"
@@ -30,6 +45,7 @@ export function Header() {
           fontSize="24"
           variant="unstyled"
           color="white"
+          position="absolute"
           onClick={onOpen}
         />
       )}
