@@ -1,12 +1,14 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, Text, Link as ChakraLink } from '@chakra-ui/react';
+import Link from 'next/link';
 
 interface Props {
   title: string;
   subtitle: string;
   heading: string;
+  slug: string;
 }
 
-export function Banner({ title, subtitle, heading }: Props) {
+export function Banner({ title, subtitle, heading, slug }: Props) {
   return (
     <Flex
       w="100%"
@@ -25,6 +27,11 @@ export function Banner({ title, subtitle, heading }: Props) {
         <Text align="center" px="12" fontSize={['12', '14', '16']} fontWeight="400" color="white">
           {heading}
         </Text>
+        <Link href={`/posts/${slug}`} passHref>
+          <ChakraLink px="12" color="green.500" fontSize={['14', '16']} fontWeight="700">
+            Saiba mais
+          </ChakraLink>
+        </Link>
       </Flex>
     </Flex>
   );

@@ -13,7 +13,7 @@ SwiperCore.use([Navigation, Pagination, Keyboard, Autoplay]);
 
 export function Swiper() {
   return (
-    <Box zIndex="1" flex="1" w="100%">
+    <Box zIndex="1" flex="1" w="100%" mt="18">
       <SwiperReact
         slidesPerView={1}
         centeredSlides
@@ -30,6 +30,7 @@ export function Swiper() {
             title="Atenção!"
             subtitle="Estamos mudando de sala!"
             heading="Continuaremos no campus Porto Alegre do IFRS, voltaremos em breve."
+            slug="estamos-mudando-de-sala"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -37,6 +38,7 @@ export function Swiper() {
             title="Open Day"
             subtitle="Nas sextas-feiras das 14h às 18h!"
             heading="O poaLAB estará aberto para visitação da comunidade externa."
+            slug="open-day"
           />
         </SwiperSlide>
       </SwiperReact>
