@@ -10,7 +10,7 @@ export default function Home() {
 
       <Text
         fontWeight="medium"
-        h="1024"
+        h="512"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -21,7 +21,7 @@ export default function Home() {
       </Text>
       <Text
         fontWeight="medium"
-        h="1024"
+        h="512"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -32,7 +32,7 @@ export default function Home() {
       </Text>
       <Text
         fontWeight="medium"
-        h="1024"
+        h="512"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -43,7 +43,7 @@ export default function Home() {
       </Text>
       <Text
         fontWeight="medium"
-        h="1024"
+        h="512"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -54,7 +54,7 @@ export default function Home() {
       </Text>
       <Text
         fontWeight="medium"
-        h="1024"
+        h="512"
         display="flex"
         alignItems="center"
         justifyContent="center"
