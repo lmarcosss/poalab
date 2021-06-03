@@ -1,6 +1,7 @@
 import { Box, Text } from '@chakra-ui/react';
 import { Swiper } from '../components/Swiper';
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 export default function Home() {
   return (
@@ -52,17 +53,8 @@ export default function Home() {
       >
         Links úteis
       </Text>
-      <Text
-        fontWeight="medium"
-        h="512"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        id="contact"
-        name="contact"
-      >
-        Contato
-      </Text>
+
+      <Footer />
     </Box>
   );
 }

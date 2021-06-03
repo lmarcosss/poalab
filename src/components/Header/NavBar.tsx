@@ -5,8 +5,6 @@ import {
   DrawerHeader,
   DrawerBody,
   DrawerContent,
-  DrawerFooter,
-  Image,
   useBreakpointValue,
   Stack,
   Link,
@@ -56,7 +54,7 @@ export function NavBar() {
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay>
           <DrawerContent bg="gray.800" p="4">
-            <DrawerCloseButton mt="6" />
+            <DrawerCloseButton mt="6" color="white" />
             <DrawerHeader>
               <Text color="green.500">Navegação</Text>
             </DrawerHeader>
@@ -71,9 +69,6 @@ export function NavBar() {
                 })}
               </Stack>
             </DrawerBody>
-            <DrawerFooter justifyContent="center">
-              <Image w="24" src="/images/ifrs-dark-theme.svg" />
-            </DrawerFooter>
           </DrawerContent>
         </DrawerOverlay>
       </Drawer>
