@@ -28,11 +28,7 @@ export function Footer() {
       flexWrap="wrap"
       py="16"
     >
-      <Link
-        target="_blank"
-        href="https://www.poa.ifrs.edu.br/"
-        _hover={{ filter: 'brightness(0.8)', transition: 'filter 0.3s' }}
-      >
+      <Link target="_blank" href="https://www.poa.ifrs.edu.br/">
         <Image w="20" src="/images/ifrs.svg" />
       </Link>
       <HStack justifyContent="center" direction="column" fontSize={['12', '16']}>
@@ -50,12 +46,7 @@ export function Footer() {
 
       <HStack pt="4" spacing="16px" width="100%" justifyContent="center">
         {SOCIAL_MEDIA.map((item) => (
-          <Link
-            key={item.href}
-            _hover={{ filter: 'brightness(0.8)', transition: 'filter 0.3s' }}
-            href={item.href}
-            target="_blank"
-          >
+          <Link key={item.href} href={item.href} target="_blank">
             <Icon fontSize="32" as={item.icon} color="white" />
           </Link>
         ))}
