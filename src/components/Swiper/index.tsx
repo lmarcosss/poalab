@@ -13,7 +13,7 @@ SwiperCore.use([Navigation, Pagination, Keyboard, Autoplay]);
 
 export function Swiper() {
   return (
-    <Box zIndex="1" flex="1" w="100%" mt="18">
+    <Box zIndex="1" flex="1" w="100%">
       <SwiperReact
         slidesPerView={1}
         centeredSlides
