@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer';
 
 export default function Home() {
   return (
-    <Box>
+    <Box position="relative">
       <Header />
       <Swiper />
 

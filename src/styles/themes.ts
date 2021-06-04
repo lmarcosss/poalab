@@ -9,7 +9,6 @@ export const theme = extendTheme({
   styles: {
     global: {
       html: {
-        width: '100%',
         scrollBehavior: 'smooth',
         overflowY: 'auto',
       },

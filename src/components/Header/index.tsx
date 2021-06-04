@@ -31,7 +31,7 @@ export function Header() {
       w="100%"
       h={['16', '20']}
       position="fixed"
-      transition="top 0.7s"
+      transition="top 0.5s"
       top={isVisible ? '0' : '-80px'}
       zIndex="99"
       background="gray.700"
