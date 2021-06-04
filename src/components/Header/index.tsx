@@ -6,6 +6,8 @@ import { NavBar } from './NavBar';
 import { useState } from 'react';
 import { useWindowEvent } from '../../hooks/useWindowEvent';
 
+const PAGE_TOP = 0;
+
 export function Header() {
   const [prevScroll, setPrevScroll] = useState(0);
   const [isVisible, setVisible] = useState(true);
@@ -17,7 +19,7 @@ export function Header() {
 
   function handleScroll() {
     const currentScroll = window.pageYOffset;
-    const visible = prevScroll > currentScroll;
+    const visible = prevScroll > currentScroll || currentScroll <= PAGE_TOP;
 
     setPrevScroll(currentScroll);
     setVisible(visible);
