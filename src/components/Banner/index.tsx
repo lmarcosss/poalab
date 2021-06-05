@@ -5,7 +5,7 @@ interface Props {
   title: string;
   subtitle: string;
   heading: string;
-  slug: string;
+  slug?: string;
 }
 
 export function Banner({ title, subtitle, heading, slug }: Props) {
@@ -27,11 +27,13 @@ export function Banner({ title, subtitle, heading, slug }: Props) {
         <Text align="center" px="12" fontSize={['12', '14', '16']} fontWeight="400" color="white">
           {heading}
         </Text>
-        <Link href={`/posts/${slug}`} passHref>
-          <ChakraLink px="12" color="green.500" fontSize={['14', '16']} fontWeight="700">
-            Saiba mais
-          </ChakraLink>
-        </Link>
+        {slug && (
+          <Link href={`/posts/${slug}`} passHref>
+            <ChakraLink px="12" color="green.500" fontSize={['14', '16']} fontWeight="700">
+              Saiba mais
+            </ChakraLink>
+          </Link>
+        )}
       </Flex>
     </Flex>
   );

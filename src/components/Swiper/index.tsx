@@ -30,7 +30,6 @@ export function Swiper() {
             title="Atenção!"
             subtitle="Estamos mudando de sala!"
             heading="Continuaremos no campus Porto Alegre do IFRS, voltaremos em breve."
-            slug="estamos-mudando-de-sala"
           />
         </SwiperSlide>
         <SwiperSlide>
