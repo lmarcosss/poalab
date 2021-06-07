@@ -15,7 +15,7 @@ export default {
       createdAt: '2021-03-05T23:27:16-03:00',
       updatedAt: '2021-03-05T23:27:16-03:00',
       article: {
-        image: 'http://www.poa.ifrs.edu.br/images/Fotos/maker_intel-003.jpg',
+        image: 'https://www.poa.ifrs.edu.br/images/Fotos/maker_intel-003.jpg',
         title:
           'Portas abertas para colocar ideias em prática: conheça o PoaLab, laboratório de fabricação digital do Campus Porto Alegre',
         text: `Proporcionar estímulo para o empreendedorismo local, bem como um lugar para jogar, criar, aprender, orientar e inventar: são apenas algumas das possibilidades oferecidas pelo PoaLab, laboratório de fabricação digital - ou Fab Lab - sediado como um programa de extensão no IFRS - Campus Porto Alegre.
@@ -40,7 +40,7 @@ Hoje, no Brasil, são 40 Fab Labs certificados e atuando com os princípios prop
 
 Desde 2015 cadastrado na rede mundial de Fab Labs, em 2016 o laboratório iniciou suas atividades como um programa de extensão do IFRS – Campus Porto Alegre.
 
-![imagem equipamentos](http://www.poa.ifrs.edu.br/images/Fotos/poalab2.JPG)
+![imagem equipamentos](https://www.poa.ifrs.edu.br/images/Fotos/poalab2.JPG)
 
 O PoaLab hoje é um local de compartilhamento não só de espaço físico e equipamentos, mas de ideias; nele é possível, por exemplo, materializar estas ideias e prototipar produtos com baixo custo e curto espaço de tempo. Para isso, o espaço conta com equipamentos como impressora 3D, cortadora laser/máquina de corte, fresadora de precisão, plotter de recorte e plotter de impressão, extrusora de filamento, além de uma bancada de eletrônica com osciloscópio, fonte de bancada, estação de solda e componentes eletrônicos diversos.
 
@@ -56,7 +56,7 @@ Peres lembra que, além dele, o qual atua na coordenação do laboratório, há 
 
 Além de estar à disposição dos alunos da instituição para atividades de aula e projetos acadêmicos, o espaço tem como característica abrir suas portas para a comunidade, permitindo que ideias sejam colocadas em prática: são os chamados Open days (dias abertos, em livre tradução).
 
-![imagem porta laboratorio](http://www.poa.ifrs.edu.br/images/Fotos/maker_intel-001.jpg)
+![imagem porta laboratorio](https://www.poa.ifrs.edu.br/images/Fotos/maker_intel-001.jpg)
 
 Os Open days são um dos requisitos para a existência de um Fab Lab. Nestes dias, a comunidade externa tem a possibilidade de conhecer as ferramentas existentes no lab e aprender sobre fabricação digital.
 
@@ -74,7 +74,7 @@ Sobre as perspectivas futuras do espaço no campus Porto Alegre, Peres menciona 
 
 “É importante que as pessoas percebam que a fabricação digital estará presente na vida de todos da mesma forma que a internet. A fabricação pessoal será uma realidade assim como a apropriação da responsabilidade pela construção de soluções para os nossos problemas. Da mesma forma que os laboratórios de informática desempenharam um papel fundamental na década de 80/90 para o desenvolvimento da computação, os Fab Labs servirão para a capacitação de uma geração de makers que serão os protagonistas desta nova realidade”, finaliza o professor.
 
-![imagem pessoas no poalab](http://www.poa.ifrs.edu.br/images/Fotos/maker_intel-006.jpg)
+![imagem pessoas no poalab](https://www.poa.ifrs.edu.br/images/Fotos/maker_intel-006.jpg)
           `,
       },
     },
