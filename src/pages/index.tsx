@@ -63,7 +63,7 @@ export default function Home({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${process.env.API_ENDPOINT}/api/posts`);
+  const response = await fetch('https://poalab.vercel.app/api/posts');
   const data = await response.json();
 
   return {

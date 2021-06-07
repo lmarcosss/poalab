@@ -59,12 +59,12 @@ export default function Post({ article, updatedAt }: Props) {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: 'blocking',
+    fallback: true,
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const response = await fetch(`${process.env.API_ENDPOINT}/api/posts/${params.slug}`);
+  const response = await fetch(`https://poalab.vercel.app/api/posts/${params.slug}`);
   const data = await response.json();
 
   return {
