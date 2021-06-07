@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import {
   Drawer,
   DrawerOverlay,
@@ -10,8 +11,8 @@ import {
   Link,
   Text,
 } from '@chakra-ui/react';
+
 import { useSidebarDrawer } from '../../contexts/SidebarDrawerContext';
-import { useRouter } from 'next/router';
 
 const MENU_ITEMS = [
   {
