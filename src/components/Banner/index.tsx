@@ -1,14 +1,14 @@
-import { Flex, Text, Link as ChakraLink } from '@chakra-ui/react';
 import Link from 'next/link';
+import { Flex, Text, Link as ChakraLink } from '@chakra-ui/react';
 
 interface Props {
   title: string;
   subtitle: string;
-  heading: string;
+  description: string;
   slug?: string;
 }
 
-export function Banner({ title, subtitle, heading, slug }: Props) {
+export function Banner({ title, subtitle, description, slug }: Props) {
   return (
     <Flex
       w="100%"
@@ -25,7 +25,7 @@ export function Banner({ title, subtitle, heading, slug }: Props) {
           {subtitle}
         </Text>
         <Text align="center" px="12" fontSize={['12', '14', '16']} fontWeight="400" color="white">
-          {heading}
+          {description}
         </Text>
         {slug && (
           <Link href={`/posts/${slug}`} passHref>

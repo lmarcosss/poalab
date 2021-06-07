@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box } from '@chakra-ui/react';
 import { Swiper as SwiperReact, SwiperSlide } from 'swiper/react';
 
@@ -7,11 +6,10 @@ import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 
 import SwiperCore, { Navigation, Pagination, Keyboard, Autoplay } from 'swiper/core';
-import { Banner } from '../Banner';
 
 SwiperCore.use([Navigation, Pagination, Keyboard, Autoplay]);
 
-export function Swiper() {
+export function Swiper({ items, Component }) {
   return (
     <Box zIndex="1" flex="1" w="100%" mt="18">
       <SwiperReact
@@ -25,21 +23,11 @@ export function Swiper() {
           disableOnInteraction: false,
         }}
       >
-        <SwiperSlide>
-          <Banner
-            title="Atenção!"
-            subtitle="Estamos mudando de sala!"
-            heading="Continuaremos no campus Porto Alegre do IFRS, voltaremos em breve."
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Banner
-            title="Open Day"
-            subtitle="Nas sextas-feiras das 14h às 18h!"
-            heading="O poaLAB estará aberto para visitação da comunidade externa."
-            slug="open-day"
-          />
-        </SwiperSlide>
+        {items.map((item, index) => (
+          <SwiperSlide key={index}>
+            <Component {...item} />
+          </SwiperSlide>
+        ))}
       </SwiperReact>
     </Box>
   );

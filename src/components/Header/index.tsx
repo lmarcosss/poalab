@@ -1,10 +1,13 @@
-import { Flex, useBreakpointValue, IconButton, Icon } from '@chakra-ui/react';
-import { Logo } from './Logo';
-import { RiMenuLine } from 'react-icons/ri';
-import { useSidebarDrawer } from '../../contexts/SidebarDrawerContext';
-import { NavBar } from './NavBar';
 import { useState } from 'react';
+
+import { Flex, useBreakpointValue, IconButton, Icon } from '@chakra-ui/react';
+import { RiMenuLine } from 'react-icons/ri';
+
+import { useSidebarDrawer } from '../../contexts/SidebarDrawerContext';
 import { useWindowEvent } from '../../hooks/useWindowEvent';
+
+import { Logo } from './Logo';
+import { NavBar } from './NavBar';
 
 const PAGE_TOP = 0;
 
@@ -53,7 +56,7 @@ export function Header() {
       )}
 
       <Flex w="100%" justify="center" align="center">
-        <Logo />
+        <Logo containerProps={{ href: '#' }} />
         <NavBar />
       </Flex>
     </Flex>
