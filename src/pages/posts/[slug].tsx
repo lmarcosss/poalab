@@ -45,7 +45,7 @@ export default function Post({ article, updatedAt }: Props) {
               })}
             </Text>
             {article?.image && (
-              <Image py="4" h={['350px', '450px', '550px']} w="100%" src={article?.image} />
+              <Image py="4" h={['350px', '450px', '650px']} w="100%" src={article?.image} />
             )}
             <Markdown>{article?.text}</Markdown>
           </Box>
