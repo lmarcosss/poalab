@@ -56,7 +56,7 @@ export function Header() {
       )}
 
       <Flex w="100%" justify="center" align="center">
-        <Logo containerProps={{ href: '#' }} />
+        <Logo href="#" />
         <NavBar />
       </Flex>
     </Flex>

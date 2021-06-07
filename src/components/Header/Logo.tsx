@@ -1,12 +1,14 @@
 import { Flex, Heading } from '@chakra-ui/react';
 
 interface Props {
-  containerProps?: any;
   darkTheme?: boolean;
+  href?: string;
 }
-export function Logo({ containerProps, darkTheme = false }: Props) {
+export function Logo({ href, darkTheme = false }: Props) {
+  const containerProps: unknown = href ? { as: 'a', href } : {};
+
   return (
-    <Flex as="a" {...containerProps} align="center" justify="center">
+    <Flex {...containerProps} align="center" justify="center">
       <Heading
         fontSize={['28', '32', '36']}
         fontWeight="bold"

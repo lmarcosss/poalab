@@ -32,7 +32,7 @@ export default function Post({ article, updatedAt }: Props) {
           width="100%"
           mb="4"
         >
-          <Logo containerProps={{ href: '/' }} />
+          <Logo href="/" />
         </Box>
         <Box m="auto" p="0 35px">
           <Box maxWidth={720} as="article" pb="8" background="white">
