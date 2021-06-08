@@ -85,7 +85,7 @@ export default function Post({ article, updatedAt }: Props) {
             display="flex"
             alignItems="center"
             position="fixed"
-            right="60px"
+            right={['20px', '20px', '20px', '60px']}
             bottom="40px"
             onClick={scrollToTop}
           />
