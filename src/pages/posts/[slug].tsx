@@ -1,10 +1,15 @@
 import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Flex, Heading, Box, Text, Image } from '@chakra-ui/react';
+import { Flex, Heading, Box, Text, Image, IconButton, Icon } from '@chakra-ui/react';
 
 import { Markdown } from '../../components/Markdown';
 import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Header/Logo';
+import { RiArrowUpSLine } from 'react-icons/ri';
+import { useWindowEvent } from '../../hooks/useWindowEvent';
+import { useState } from 'react';
+
+const PAGE_TOP = 0;
 
 interface Props {
   article: {
@@ -16,12 +21,31 @@ interface Props {
 }
 
 export default function Post({ article, updatedAt }: Props) {
+  const [pagePosition, setPagePosition] = useState(0);
+
+  function handleScroll() {
+    setPagePosition(window.pageYOffset);
+  }
+
+  function scrollToTop() {
+    window.scrollTo(PAGE_TOP, PAGE_TOP);
+  }
+
+  useWindowEvent('scroll', handleScroll);
+
   return (
     <>
       <Head>
         <title>poaLAB | post</title>
       </Head>
-      <Flex w="100%" h="100%" direction="column" align="center" justify="center">
+      <Flex
+        w="100%"
+        h="100%"
+        direction="column"
+        align="center"
+        justify="center"
+        position="relative"
+      >
         <Box
           as="header"
           display="flex"
@@ -50,6 +74,22 @@ export default function Post({ article, updatedAt }: Props) {
             <Markdown>{article?.text}</Markdown>
           </Box>
         </Box>
+        {pagePosition > PAGE_TOP && (
+          <IconButton
+            aria-label="Ir para o topo"
+            icon={<Icon as={RiArrowUpSLine} />}
+            fontSize="32px"
+            variant="unstyled"
+            color="white"
+            bg="gray.700"
+            display="flex"
+            alignItems="center"
+            position="fixed"
+            right="60px"
+            bottom="40px"
+            onClick={scrollToTop}
+          />
+        )}
         <Footer />
       </Flex>
     </>
