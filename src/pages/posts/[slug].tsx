@@ -58,22 +58,24 @@ export default function Post({ article, updatedAt }: Props) {
         >
           <Logo href="/" />
         </Box>
-        <Box m="auto" p="0 35px">
-          <Box maxWidth={720} as="article" pb="8" background="white">
-            <Heading py="4">{article?.title}</Heading>
-            <Text fontWeight="500" fontSize={['12', '14']} color="gray.500">
-              {new Date(updatedAt).toLocaleDateString('pt-BR', {
-                day: '2-digit',
-                month: 'long',
-                year: 'numeric',
-              })}
-            </Text>
-            {article?.image && (
-              <Image py="4" h={['350px', '450px', '650px']} w="100%" src={article?.image} />
-            )}
-            <Markdown>{article?.text}</Markdown>
+        {article && (
+          <Box m="auto" p="0 35px">
+            <Box maxWidth={720} as="article" pb="8" background="white">
+              <Heading py="4">{article?.title}</Heading>
+              <Text fontWeight="500" fontSize={['12', '14']} color="gray.500">
+                {new Date(updatedAt).toLocaleDateString('pt-BR', {
+                  day: '2-digit',
+                  month: 'long',
+                  year: 'numeric',
+                })}
+              </Text>
+              {article?.image && (
+                <Image py="4" h={['350px', '450px', '650px']} w="100%" src={article?.image} />
+              )}
+              <Markdown>{article?.text}</Markdown>
+            </Box>
           </Box>
-        </Box>
+        )}
         {pagePosition > PAGE_TOP && (
           <IconButton
             aria-label="Ir para o topo"
@@ -97,9 +99,22 @@ export default function Post({ article, updatedAt }: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const response = await fetch('https://poalab.vercel.app/api/posts');
+  const data = await response.json();
+
+  const slugsFiltered = data.result
+    .map((item) => item?.slug)
+    .filter((item) => typeof item === 'string');
+
+  const slugs = slugsFiltered.map((slug) => ({
+    params: {
+      slug,
+    },
+  }));
+
   return {
-    paths: [],
-    fallback: true,
+    paths: slugs,
+    fallback: 'blocking',
   };
 };
 
