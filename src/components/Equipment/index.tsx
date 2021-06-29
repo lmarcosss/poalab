@@ -2,16 +2,14 @@ import { Box, Image, Flex } from '@chakra-ui/react';
 
 export function Equipment({ name, image, description }) {
   return (
-    <Flex direction="column" maxW="sm" justify="space-between" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Box boxSizing="sm">
+    <Box direction="column" maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+      <Flex as="span" h="380">
         <Image
-          w="100%"
-          h="auto"
           src={image}
           alt={name}
           objectFit="contain"
         />
-      </Box>
+      </Flex>
       <Flex p="6" direction="column">
         <Box
           mt="1"
@@ -25,6 +23,6 @@ export function Equipment({ name, image, description }) {
           {description}
         </Box>
       </Flex>
-    </Flex>
+    </Box>
   )
 }
