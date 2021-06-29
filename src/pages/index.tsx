@@ -93,7 +93,7 @@ const getEquipments = async () => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getPosts();
-  const equipments = await getEquipments();
+  const equipments = [];
 
   return {
     props: {
