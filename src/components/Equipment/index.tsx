@@ -2,8 +2,8 @@ import { Box, Image, Flex } from '@chakra-ui/react';
 
 export function Equipment({ name, image, description }) {
   return (
-    <Box direction="column" maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Flex as="span" h="380">
+    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+      <Flex h="370">
         <Image
           src={image}
           alt={name}
