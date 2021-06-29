@@ -88,7 +88,7 @@ const getPosts = async () => {
 }
 
 const getEquipments = async () => {
-  return await fetchData('http://localhost:3000/api/equipments');
+  return await fetchData('https://poalab.vercel.app/api/equipments');
 }
 
 export const getStaticProps: GetStaticProps = async () => {
