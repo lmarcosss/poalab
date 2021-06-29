@@ -1,12 +1,19 @@
 import { GetStaticProps } from 'next';
-import { Box, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Text,
+  SimpleGrid,
+} from '@chakra-ui/react';
 
-import { Swiper } from '../components/Swiper';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { Banner } from '../components/Banner';
+import {
+  Swiper,
+  Header,
+  Footer,
+  Banner,
+  Equipment,
+} from '../components';
 
-export default function Home({ posts }) {
+export default function Home({ posts, equipments }) {
   return (
     <Box>
       <Header />
@@ -34,17 +41,24 @@ export default function Home({ posts }) {
       >
         Espaço
       </Text>
-      <Text
-        fontWeight="medium"
-        h="512"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        id="equipments"
-        name="equipments"
-      >
-        Equipamentos
-      </Text>
+      <Box>
+        <Text
+          fontWeight="medium"
+          h="512"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          id="equipments"
+          name="equipments"
+        >
+          Equipamentos
+        </Text>
+        <SimpleGrid columns={{ lg: 4, sm: 2, md: 3}} spacing={10} padding={10}>
+          {equipments.map((equipment, index) => (
+            <Equipment {...equipment} key={index} />
+          ))}
+        </SimpleGrid>
+      </Box>
       <Text
         fontWeight="medium"
         h="512"
@@ -62,13 +76,29 @@ export default function Home({ posts }) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch('https://poalab.vercel.app/api/posts');
+const fetchData = async (url) => {
+  const response = await fetch(url);
   const data = await response.json();
+
+  return data.result
+}
+
+const getPosts = async () => {
+  return await fetchData('https://poalab.vercel.app/api/posts');
+}
+
+const getEquipments = async () => {
+  return await fetchData('https://poalab.vercel.app/api/equipments');
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await getPosts();
+  const equipments = [];
 
   return {
     props: {
-      posts: data.result,
+      posts,
+      equipments,
     },
     revalidate: 60 * 60 * 24, // 24 hours
   };

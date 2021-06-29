@@ -1,0 +1,60 @@
+export default {
+  result: [
+    {
+      name: '2 Impressoras 3D Wanhao Duplicator 4',
+      image: 'https://www.poalab.net.br/images/wanhao.png',
+      description: '2 extrusores filamento 1.75mm camada entre 0.1 e 0.5mm área: 225mm x 145mm x 150mm base aquecida',
+      createdAt: '2021-06-28T23:27:16-03:00',
+      updatedAt: '2021-06-28T23:27:16-03:00',
+    },
+    {
+      name: '1 Impressora 3D printrbot simple metal',
+      image: 'https://www.poalab.net.br/images/printrbot.png',
+      description: 'filamento de 1.75mm resolução de camada entre 0.1 e 0.5mm área de trabalho: 152mm x 152mm x 152mm',
+      createdAt: '2021-06-28T23:27:16-03:00',
+      updatedAt: '2021-06-28T23:27:16-03:00',
+    },
+    {
+      name: '1 Cortadora Laser CMA6040',
+      image: 'https://www.poalab.net.br/images/cma6040.png',
+      description: 'área de corte de 60cm x 40cm potência do laser: 70-80W Espessura do corte: 0-25mm para acrílico Precisão < 0.01mm',
+      createdAt: '2021-06-28T23:27:16-03:00',
+      updatedAt: '2021-06-28T23:27:16-03:00',
+    },
+    {
+      name: '1 Plotter de Recorte SAGA 720i',
+      image: 'https://www.poalab.net.br/images/plottersaga.png',
+      description: 'largura máxima da mídia: 72cm largura máxima de corte: 62cm laser point velocidade: 600mm/s precisão de repetição: 0.082mm',
+      createdAt: '2021-06-28T23:27:16-03:00',
+      updatedAt: '2021-06-28T23:27:16-03:00',
+    },
+    {
+      name: '1 Fresadora MTC-200×250 (não operacional)',
+      image: 'https://www.poalab.net.br/images/fresa1.png',
+      description: 'área: 200mm x 250mm eixo z: 150mm refrigeração do motor a ar velocidade de rotação programável',
+      createdAt: '2021-06-28T23:27:16-03:00',
+      updatedAt: '2021-06-28T23:27:16-03:00',
+    },
+    {
+      name: '1 Extrusora de filamento modelo filabot wee',
+      image: 'https://www.poalab.net.br/images/filabot.png',
+      description: 'bico de extrusão de 1.75mm adequado para ABS e PLA taxa de extrusão entre 13 e 51 cm/minuto',
+      createdAt: '2021-06-28T23:27:16-03:00',
+      updatedAt: '2021-06-28T23:27:16-03:00',
+    },
+    {
+      name: '1 Plotter de Impressão HP T520 não operacional',
+      image: 'https://www.poalab.net.br/images/plotterhp.png',
+      description: 'alimentação por rolo ou folha largura de impressão: 61cm espessura: até 11.8 milésimos de polegada resolução de impressão: 2400 x 1200 dpi',
+      createdAt: '2021-06-28T23:27:16-03:00',
+      updatedAt: '2021-06-28T23:27:16-03:00',
+    },
+    {
+      name: 'Bancada de Eletrônica',
+      image: 'https://www.poalab.net.br/images/bancada.png',
+      description: 'osciloscópio fonte de bancada estação de solda componentes eletrônicos diversos',
+      createdAt: '2021-06-28T23:27:16-03:00',
+      updatedAt: '2021-06-28T23:27:16-03:00',
+    },
+  ],
+};
