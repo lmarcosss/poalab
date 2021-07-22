@@ -4,6 +4,7 @@ import {
   Text,
   Flex,
   SimpleGrid,
+  Link as ExternalLink,
 } from '@chakra-ui/react';
 
 import {
@@ -20,18 +21,48 @@ export default function Home({ posts, equipments, links }) {
     <Box>
       <Header />
       <Swiper Component={Banner} items={posts} />
-
-      <Text
-        fontWeight="medium"
-        h="512"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        id="about"
-        name="about"
-      >
-        Sobre
-      </Text>
+      <Box>
+        <Text
+          fontWeight="medium"
+          h="512"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          id="about"
+          name="about"
+        >
+          Sobre
+        </Text>
+        <Text
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+          textAlign="center"
+        >
+            O POALAB é um laboratório de fabricação digital e está conectado à rede mundial de fab labs.<br/>
+            Opera como um programa de extensão do IFRS campus Porto Alegre.<br/>
+            Temos como missão popularizar o acesso
+            e letramento na fabricação digital,<br/>
+            funcionando como uma plataforma de criatividade,
+            aprendizagem e invenção.<br/>
+            Ser um Fab Lab significa estar conectado
+            a uma comunidade mundial de<br/>
+            alunos, educadores, técnicos, pesquisadores e inovadores e desenvolver<br/>
+            atividades dentro da filosofia do conhecimento aberto.<br/>
+            <Text>
+              Conheça a {' '}
+              <ExternalLink
+                isExternal
+                color="green.500"
+                href="http://www.fabfoundation.org/index.php/the-fab-charter/index.html"
+              >
+                FAB CHARTER
+              </ExternalLink>
+            </Text>
+            A Carta de Intenções que regra os Fab Labs<br/>
+        </Text>
+      </Box>
       <Text
         fontWeight="medium"
         h="512"
