@@ -61,7 +61,7 @@ export default function Home({ posts, equipments, links }) {
           ))}
         </SimpleGrid>
       </Box>
-      {/* <Box>
+      <Box>
         <Text
           fontWeight="medium"
           h="512"
@@ -80,7 +80,7 @@ export default function Home({ posts, equipments, links }) {
             </Flex>
           ))}
         </SimpleGrid>
-      </Box> */}
+      </Box>
 
       <Footer />
     </Box>
@@ -109,13 +109,13 @@ const getLinks = async () => {
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getPosts();
   const equipments = await getEquipments();
-  // const links = await getLinks();
+  const links = await getLinks();
 
   return {
     props: {
       posts,
       equipments,
-      // links,
+      links,
     },
     revalidate: 60 * 60 * 24, // 24 hours
   };
