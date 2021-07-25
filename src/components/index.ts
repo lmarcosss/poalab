@@ -5,3 +5,6 @@ export { Banner } from './Banner';
 export { Markdown } from './Markdown';
 export { Equipment } from './Equipment';
 export { Link } from './Link';
+export { Workspace } from './Workspace';
+export { Title } from './Title';
+
