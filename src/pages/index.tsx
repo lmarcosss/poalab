@@ -68,7 +68,7 @@ export default function Home({
       </Box>
       <Box>
         <Title text="Espaço" />
-        <Box paddingTop="8px" paddingBottom="8px">
+        <Box paddingTop="8px" paddingBottom="18px">
           <Swiper Component={Workspace} items={workspace} />
         </Box>
       </Box>
