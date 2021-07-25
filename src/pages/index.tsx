@@ -14,33 +14,36 @@ import {
   Banner,
   Equipment,
   Link,
+  Workspace,
+  Title,
 } from '../components';
 
-export default function Home({ posts, equipments, links }) {
+export default function Home({
+  posts,
+  equipments,
+  links,
+  workspace,
+}) {
   return (
     <Box>
       <Header />
-      <Swiper Component={Banner} items={posts} />
+      <Box mt="18">
+        <Swiper Component={Banner} items={posts} />
+      </Box>
       <Box>
-        <Text
-          fontWeight="medium"
-          h="512"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          id="about"
-          name="about"
-        >
-          Sobre
-        </Text>
         <Text
           display="flex"
           alignItems="center"
           justifyContent="center"
           flexDirection="column"
           textAlign="center"
+          padding="10"
+          fontSize="18"
+          orientation="horizontal"
         >
-            O POALAB é um laboratório de fabricação digital e está conectado à rede mundial de fab labs.<br/>
+          <span>
+            O <b>poaLAB</b> é um laboratório de fabricação digital e está conectado à rede mundial de fab labs.<br/>
+          </span>
             Opera como um programa de extensão do IFRS campus Porto Alegre.<br/>
             Temos como missão popularizar o acesso
             e letramento na fabricação digital,<br/>
@@ -63,29 +66,14 @@ export default function Home({ posts, equipments, links }) {
             A Carta de Intenções que regra os Fab Labs<br/>
         </Text>
       </Box>
-      <Text
-        fontWeight="medium"
-        h="512"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        id="work-space"
-        name="work-space"
-      >
-        Espaço
-      </Text>
       <Box>
-        <Text
-          fontWeight="medium"
-          h="512"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          id="equipments"
-          name="equipments"
-        >
-          Equipamentos
-        </Text>
+        <Title text="Espaço" />
+        <Box paddingTop="8px" paddingBottom="8px">
+          <Swiper Component={Workspace} items={workspace} />
+        </Box>
+      </Box>
+      <Box>
+        <Title text="Equipamentos" />
         <SimpleGrid columns={{ lg: 4, sm: 2, md: 3}} spacing={10} padding={10}>
           {equipments.map((equipment, index) => (
             <Equipment {...equipment} key={index} />
@@ -93,17 +81,7 @@ export default function Home({ posts, equipments, links }) {
         </SimpleGrid>
       </Box>
       <Box>
-        <Text
-          fontWeight="medium"
-          h="512"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          id="links"
-          name="links"
-        >
-          Links úteis
-        </Text>
+        <Title text="Links úteis" />
         <SimpleGrid columns={{ lg: 4, sm: 2, md: 3}} spacing={10} padding={20}>
           {links.map((link, index) => (
             <Flex justify="center">
@@ -134,19 +112,25 @@ const getEquipments = async () => {
 }
 
 const getLinks = async () => {
-  return await fetchData('https://poalab.vercel.app/api/links')
+  return await fetchData('https://poalab.vercel.app/api/links');
+}
+
+const getWorkspace = async () => {
+  return await fetchData('https://poalab.vercel.app/api/workspace');
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getPosts();
   const equipments = await getEquipments();
   const links = await getLinks();
+  const workspace = await getWorkspace();
 
   return {
     props: {
       posts,
       equipments,
       links,
+      workspace,
     },
     revalidate: 60 * 60 * 24, // 24 hours
   };
