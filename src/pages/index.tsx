@@ -30,7 +30,7 @@ export default function Home({
       <Box mt="18">
         <Swiper Component={Banner} items={posts} />
       </Box>
-      <Box>
+      <Box id="about">
         <Text
           display="flex"
           alignItems="center"
@@ -67,13 +67,13 @@ export default function Home({
         </Text>
       </Box>
       <Box>
-        <Title text="Espaço" />
+        <Title text="Espaço" id="work-space" />
         <Box paddingTop="8px" paddingBottom="18px">
           <Swiper Component={Workspace} items={workspace} />
         </Box>
       </Box>
       <Box>
-        <Title text="Equipamentos" />
+        <Title text="Equipamentos" id="equipments" />
         <SimpleGrid columns={{ lg: 4, sm: 2, md: 3}} spacing={10} padding={10}>
           {equipments.map((equipment, index) => (
             <Equipment {...equipment} key={index} />
@@ -81,7 +81,7 @@ export default function Home({
         </SimpleGrid>
       </Box>
       <Box>
-        <Title text="Links úteis" />
+        <Title text="Links úteis" id="links" />
         <SimpleGrid columns={{ lg: 4, sm: 2, md: 3}} spacing={10} padding={20}>
           {links.map((link, index) => (
             <Flex justify="center">

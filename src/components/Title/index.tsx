@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex, Text } from '@chakra-ui/react'
 
-export function Title({ text }) {
+export function Title({ text, id }) {
   return (
     <Flex
       w="100%"
@@ -10,6 +10,8 @@ export function Title({ text }) {
       backgroundSize="cover"
       align="center"
       justify="center"
+      id={id}
+      name={id}
     >
       <Text fontSize="22" fontWeight="700" color="white">
         {text}
